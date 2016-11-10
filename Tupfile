@@ -1,0 +1,36 @@
+ifndef CONFIG_CLANG
+CXX       = clang++
+else
+CXX       = $(CONFIG_CLANG)
+endif
+
+ifndef CONFIG_PYTHON_CONFIG
+PYTHON_CONFIG = python3.5-config
+else
+PYTHON_CONFIG = $(CONFIG_PYTHON_CONFIG)
+endif
+
+LDFLAGS   = `$(PYTHON_CONFIG) --ldflags` -lCGAL -lgmp
+LIBS      = `$(PYTHON_CONFIG) --libs`
+INCLUDES  = -Iextern/pybind11/include/ -Iinclude `$(PYTHON_CONFIG) --includes`
+WARNINGS  = -Wall -Wextra
+ifndef CONFIG_CLANG
+WARNINGS +=
+endif
+
+MACHINE   = -march=native -mtune=native
+CXXFLAGS  = -std=c++14 -x c++ $(INCLUDES) $(WARNINGS) $(MACHINE) -fPIC \
+            -g3 -O2
+
+MINBALL_SO_FOR_PYTHON = build/_minball.so
+
+!cxx_c = |> ^ c++ %f^ \
+    $(CXX) $(CXXFLAGS) -c %f -o %o |>
+!cxx_link_shared  = |> ^ c++ link %f^ \
+    $(CXX) $(LDFLAGS) -shared %f $(LIBS) -o %o |>
+!copy             = |> cp %f %o |>
+
+: foreach src/*.cpp |> !cxx_c |> build/%B.o {objs}
+: {objs} |> !cxx_link_shared |> build/minball.so
+
+: build/minball.so |> !copy |> minball.so
