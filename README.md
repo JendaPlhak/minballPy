@@ -5,6 +5,7 @@ Port of C++ algorithm for finding smallest enclosing sphere of spheres. Library 
 ## Usage:
 
 ```python
+import random
 import minball
 spheres = []
 for _ in range(10):
@@ -16,7 +17,10 @@ min_sphere = minball.get_min_sphere2D(spheres)
 print(min_sphere.radius, min_sphere.center)
 ```
 
+## Dependencies
+[CGAL](http://doc.cgal.org/latest/Manual/installation.html)
+gcc
+
 ## Setup && Build
 
-`make setup`
-`make`
+`make setup && make`
