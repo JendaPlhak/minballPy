@@ -12,9 +12,7 @@ CXXFLAGS  = -std=c++14 -x c++ $(INCLUDES) $(WARNINGS) $(MACHINE) -fPIC \
 
 all: build/minball.so
 
-setup: .git
-
-.git:
+setup:
 	git submodule update --init --recursive
 
 build_dir:
