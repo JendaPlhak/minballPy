@@ -28,7 +28,7 @@ change the range and recompile.
 ## Dependencies
 [CGAL](https://github.com/JendaPlhak/minballPy/blob/master/img/example.gif)
 
-gcc
+`gcc` or `clang` (Clang is default)
 
 ## Setup && Build
 
