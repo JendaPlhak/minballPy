@@ -10,7 +10,7 @@ MACHINE   = -march=native -mtune=native
 CXXFLAGS  = -std=c++14 -x c++ $(INCLUDES) $(WARNINGS) $(MACHINE) -fPIC \
             -g3 -O2
 
-all: build/minball.so
+all: minball.so
 
 setup:
 	git submodule update --init --recursive
