@@ -1,5 +1,5 @@
 # minballPy
-Port of C++ algorithm for finding smallest enclosing sphere of spheres. Library documentation avaliable [here](http://doc.cgal.org/latest/Bounding_volumes/classCGAL_1_1Min__sphere__of__spheres__d.html#af9d984199150f79be185b3cb526399b9)
+Port of C++ algorithm to Python for finding smallest enclosing sphere of spheres. Library documentation avaliable [here](http://doc.cgal.org/latest/Bounding_volumes/classCGAL_1_1Min__sphere__of__spheres__d.html#af9d984199150f79be185b3cb526399b9)
 For further information about the problem I recommend reading [thesis by Kaspar Fisher](https://www.inf.ethz.ch/personal/emo/DoctThesisFiles/fischer05.pdf).
 
 ![alt text](https://github.com/JendaPlhak/minballPy/blob/master/img/example.gif "Example circles")
