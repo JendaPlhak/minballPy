@@ -26,7 +26,7 @@ head to [include/minball_py.hpp](https://github.com/JendaPlhak/minballPy/blob/ma
 change the range and recompile.
 
 ## Dependencies
-[CGAL](https://github.com/JendaPlhak/minballPy/blob/master/img/example.gif)
+[CGAL](http://doc.cgal.org/latest/Manual/installation.html) (For Ubuntu should be sufficient to do `sudo apt-get install libcgal-dev`)
 
 `gcc` or `clang` (gcc is default)
 
